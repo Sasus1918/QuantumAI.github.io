@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuantumAI - Plataforma de Aprendizaje de Inglés</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Hero Section & Dashboard -->
+    <div id="dashboard" class="main-container">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span>Edumural</span>
+                </div>
+                <h1 class="hero-title">
+                    Bienvenido a <span class="gradient-text">QuantumAI</span>
+                </h1>
+                <p class="hero-subtitle">Tu Aventura Moderna de Aprendizaje de Inglés</p>
+                <p class="hero-description">
+                    Domina el inglés a través de experiencias de aprendizaje gamificadas diseñadas para el estudiante moderno. 
+                    Progresa a través de 6 módulos interactivos, cada uno creado para mejorar diferentes aspectos de tus habilidades lingüísticas.
+                </p>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">🎯</div>
+                        <span>Niveles de Dificultad Adaptativos</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📊</div>
+                        <span>Seguimiento de Progreso en Tiempo Real</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎮</div>
+                        <span>Experiencia de Juego Interactiva</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📈</div>
+                        <span>Análisis de Aprendizaje Profesional</span>
+                    </div>
+                </div>
+                <button class="hero-cta" onclick="scrollToModules()">
+                    Comenzar Aventura <span class="cta-arrow">→</span>
+                </button>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <div class="mini-icon">📚</div>
+                    <span>Vocabulario</span>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="mini-icon">🧩</div>
+                    <span>Gramática</span>
+                </div>
+                <div class="floating-card card-3">
+                    <div class="mini-icon">⏱️</div>
+                    <span>Velocidad</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modules Grid -->
+        <div id="modules-section" class="modules-section">
+            <div class="section-header">
+                <h2>Explora Nuestros Módulos</h2>
+                <p>Cada módulo está diseñado para una experiencia de aprendizaje única</p>
+            </div>
+            
+            <div class="modules-grid">
+                <div class="module-card modern-card module-1" onclick="openModule('match-learn')">
+                    <div class="card-glow glow-blue"></div>
+                    <div class="module-header">
+                        <div class="module-icon blue-gradient">📚</div>
+                        <div class="module-badge">Baby • Adult • Boss</div>
+                    </div>
+                    <h3>Match & Learn</h3>
+                    <p>Aprende vocabulario en inglés con 3 niveles de dificultad. 30 preguntas por nivel → 90 en total.</p>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill blue-progress" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0% Completado</span>
+                    </div>
+                    <button class="module-btn btn-blue">
+                        <span>Comenzar</span>
+                        <div class="btn-shine"></div>
+                    </button>
+                </div>
+
+                <div class="module-card modern-card module-2" onclick="openModule('grammar-puzzle')">
+                    <div class="card-glow glow-green"></div>
+                    <div class="module-header">
+                        <div class="module-icon green-gradient">🧩</div>
+                        <div class="module-badge">3 Niveles</div>
+                    </div>
+                    <h3>Grammar Puzzle</h3>
+                    <p>Forma oraciones como rompecabezas. 3 niveles con 30 oraciones cada uno → 90 en total.</p>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill green-progress" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0% Completado</span>
+                    </div>
+                    <button class="module-btn btn-green">
+                        <span>Comenzar</span>
+                        <div class="btn-shine"></div>
+                    </button>
+                </div>
+
+                <div class="module-card modern-card module-3" onclick="openModule('time-race')">
+                    <div class="card-glow glow-orange"></div>
+                    <div class="module-header">
+                        <div class="module-icon orange-gradient">⏱️</div>
+                        <div class="module-badge">30 Preguntas</div>
+                    </div>
+                    <h3>Time Race</h3>
+                    <p>Juego a contrarreloj. Responde 30 preguntas que aumentan de dificultad y gana estrellas.</p>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill orange-progress" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0% Completado</span>
+                    </div>
+                    <button class="module-btn btn-orange">
+                        <span>Comenzar</span>
+                        <div class="btn-shine"></div>
+                    </button>
+                </div>
+
+                <div class="module-card modern-card module-4" onclick="openModule('tell-me-more')">
+                    <div class="card-glow glow-purple"></div>
+                    <div class="module-header">
+                        <div class="module-icon purple-gradient">📖</div>
+                        <div class="module-badge">10 Historias</div>
+                    </div>
+                    <h3>Tell Me More</h3>
+                    <p>Juego narrativo con 10 historias. Entiende el contexto y el uso del inglés en situaciones reales.</p>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill purple-progress" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0% Completado</span>
+                    </div>
+                    <button class="module-btn btn-purple">
+                        <span>Comenzar</span>
+                        <div class="btn-shine"></div>
+                    </button>
+                </div>
+
+                <div class="module-card modern-card module-5" onclick="openModule('baby-games')">
+                    <div class="card-glow glow-pink"></div>
+                    <div class="module-header">
+                        <div class="module-icon pink-gradient">🎮</div>
+                        <div class="module-badge">30 Mini-Juegos</div>
+                    </div>
+                    <h3>Baby Games</h3>
+                    <p>Mini-juegos sencillos para niños pequeños o quienes recién empiezan. ¡Aprendizaje divertido!</p>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill pink-progress" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0% Completado</span>
+                    </div>
+                    <button class="module-btn btn-pink">
+                        <span>Comenzar</span>
+                        <div class="btn-shine"></div>
+                    </button>
+                </div>
+
+                <div class="module-card modern-card module-6" onclick="openModule('link-learn')">
+                    <div class="card-glow glow-teal"></div>
+                    <div class="module-header">
+                        <div class="module-icon teal-gradient">🔗</div>
+                        <div class="module-badge">25 Plataformas + 10 Canales</div>
+                    </div>
+                    <h3>Link & Learn</h3>
+                    <p>Guía de 25 plataformas para aprender inglés y 10 canales de YouTube recomendados.</p>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill teal-progress" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0% Completado</span>
+                    </div>
+                    <button class="module-btn btn-teal">
+                        <span>Comenzar</span>
+                        <div class="btn-shine"></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Module 1: Match & Learn -->
+    <div id="match-learn" class="module-container hidden">
+        <div class="module-intro-header">
+            <button class="back-btn" onclick="goToDashboard()">
+                <span class="back-arrow">←</span> Volver al Dashboard
+            </button>
+            <div class="module-intro-content">
+                <div class="intro-icon blue-gradient">📚</div>
+                <h1>Match & Learn</h1>
+                <p class="intro-description">
+                    ¡Domina el vocabulario en inglés con nuestro sistema de coincidencias interactivo! 
+                    Elige tu nivel de dificultad y conecta palabras con sus definiciones. 
+                    Desde conceptos básicos hasta vocabulario avanzado.
+                </p>
+                <div class="intro-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">90</span>
+                        <span class="stat-label">Preguntas Total</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Niveles</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Interactivo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="difficulty-selection">
+            <div class="difficulty-card baby-level" onclick="startMatching('baby')">
+                <div class="difficulty-icon">🍼</div>
+                <h3>Baby Level</h3>
+                <p>Vocabulario básico y palabras cotidianas</p>
+                <span class="difficulty-badge easy">Fácil</span>
+                <button class="difficulty-btn btn-baby">Comenzar Baby</button>
+            </div>
+            <div class="difficulty-card adult-level" onclick="startMatching('adult')">
+                <div class="difficulty-icon">👤</div>
+                <h3>Adult Level</h3>
+                <p>Vocabulario intermedio y profesional</p>
+                <span class="difficulty-badge medium">Medio</span>
+                <button class="difficulty-btn btn-adult">Comenzar Adult</button>
+            </div>
+            <div class="difficulty-card boss-level" onclick="startMatching('boss')">
+                <div class="difficulty-icon">👑</div>
+                <h3>Boss Level</h3>
+                <p>Vocabulario avanzado y académico</p>
+                <span class="difficulty-badge hard">Difícil</span>
+                <button class="difficulty-btn btn-boss">Comenzar Boss</button>
+            </div>
+        </div>
+
+        <div id="matching-game" class="game-container hidden">
+            <div class="game-header">
+                <div class="game-progress">
+                    <div class="progress-circle">
+                        <span id="question-counter">1/30</span>
+                    </div>
+                </div>
+                <div class="game-stats">
+                    <div class="stat-box">
+                        <span class="stat-label">Puntuación</span>
+                        <span id="match-score" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">Nivel</span>
+                        <span id="current-level" class="stat-value">Baby</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="question-section">
+                <div class="word-card">
+                    <h2 id="current-word" class="word-title">palabra</h2>
+                    <p id="word-definition" class="word-definition">Definición de la palabra aparecerá aquí</p>
+                </div>
+                
+                <div class="options-section">
+                    <h3>Selecciona la palabra correcta:</h3>
+                    <div id="match-options" class="options-grid"></div>
+                </div>
+                
+                <button class="next-btn hidden" id="next-match-question" onclick="nextMatchQuestion()">
+                    Siguiente Pregunta →
+                </button>
+            </div>
+        </div>
+
+        <div id="match-results" class="results-container hidden">
+            <div class="results-header">
+                <div class="results-icon">🎉</div>
+                <h2>¡Excelente Trabajo!</h2>
+                <div class="final-score">
+                    <span id="final-match-score">0</span><small>/30</small>
+                </div>
+            </div>
+            <div class="charts-container">
+                <div class="chart-card">
+                    <h3>Rendimiento por Nivel</h3>
+                    <div class="chart-wrapper" style="position: relative; height: 300px;">
+                        <canvas id="matchPerformanceChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>Progreso de Aprendizaje</h3>
+                    <div class="chart-wrapper" style="position: relative; height: 300px;">
+                        <canvas id="matchProgressChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="results-actions">
+                <button class="action-btn secondary" onclick="resetMatchModule()">Intentar de Nuevo</button>
+                <button class="action-btn primary" onclick="goToDashboard()">Continuar Aprendiendo</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Module 2: Grammar Puzzle -->
+    <div id="grammar-puzzle" class="module-container hidden">
+        <div class="module-intro-header">
+            <button class="back-btn" onclick="goToDashboard()">
+                <span class="back-arrow">←</span> Volver al Dashboard
+            </button>
+            <div class="module-intro-content">
+                <div class="intro-icon green-gradient">🧩</div>
+                <h1>Grammar Puzzle</h1>
+                <p class="intro-description">
+                    ¡Construye oraciones perfectas como un rompecabezas! Arrastra y suelta las piezas de oraciones 
+                    para formar estructuras gramaticales correctas. Desde frases simples hasta construcciones complejas.
+                </p>
+                <div class="intro-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">90</span>
+                        <span class="stat-label">Oraciones</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Niveles</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">Drag</span>
+                        <span class="stat-label">& Drop</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="difficulty-selection">
+            <div class="difficulty-card baby-level" onclick="startGrammar('baby')">
+                <div class="difficulty-icon">🍼</div>
+                <h3>Baby Level</h3>
+                <p>Oraciones simples y estructura básica</p>
+                <span class="difficulty-badge easy">Fácil</span>
+                <button class="difficulty-btn btn-baby">Comenzar Baby</button>
+            </div>
+            <div class="difficulty-card adult-level" onclick="startGrammar('adult')">
+                <div class="difficulty-icon">👤</div>
+                <h3>Adult Level</h3>
+                <p>Estructuras complejas y subordinadas</p>
+                <span class="difficulty-badge medium">Medio</span>
+                <button class="difficulty-btn btn-adult">Comenzar Adult</button>
+            </div>
+            <div class="difficulty-card boss-level" onclick="startGrammar('boss')">
+                <div class="difficulty-icon">👑</div>
+                <h3>Boss Level</h3>
+                <p>Construcciones avanzadas y académicas</p>
+                <span class="difficulty-badge hard">Difícil</span>
+                <button class="difficulty-btn btn-boss">Comenzar Boss</button>
+            </div>
+        </div>
+
+        <div id="grammar-game" class="game-container hidden">
+            <div class="game-header">
+                <div class="game-progress">
+                    <div class="progress-circle">
+                        <span id="grammar-question-counter">1/30</span>
+                    </div>
+                </div>
+                <div class="game-stats">
+                    <div class="stat-box">
+                        <span class="stat-label">Puntuación</span>
+                        <span id="grammar-score" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">Tiempo</span>
+                        <span id="grammar-timer" class="stat-value">00:00</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="puzzle-section">
+                <h3>Arrastra las piezas para formar la oración correcta:</h3>
+                <div id="sentence-pieces" class="pieces-container">
+                    <!-- Puzzle pieces will be inserted here -->
+                </div>
+                
+                <div id="drop-zone" class="drop-zone">
+                    <div class="drop-hint">
+                        <span class="drop-icon">⬇️</span>
+                        <p>Suelta las piezas aquí para formar la oración</p>
+                    </div>
+                </div>
+                
+                <div class="puzzle-actions">
+                    <button class="action-btn secondary" id="reset-puzzle" onclick="resetPuzzle()">Reiniciar</button>
+                    <button class="action-btn primary" id="check-grammar" onclick="checkGrammar()">Verificar Respuesta</button>
+                    <button class="next-btn hidden" id="next-grammar" onclick="nextGrammarQuestion()">Siguiente Oración →</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="grammar-results" class="results-container hidden">
+            <div class="results-header">
+                <div class="results-icon">🎯</div>
+                <h2>¡Rompecabezas Completado!</h2>
+                <div class="final-score">
+                    <span id="final-grammar-score">0</span><small>/30</small>
+                </div>
+            </div>
+            <div class="charts-container">
+                <div class="chart-card">
+                    <h3>Precisión Gramatical</h3>
+                    <div class="chart-wrapper" style="position: relative; height: 300px;">
+                        <canvas id="grammarAccuracyChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>Tiempo por Nivel</h3>
+                    <div class="chart-wrapper" style="position: relative; height: 300px;">
+                        <canvas id="grammarTimeChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="results-actions">
+                <button class="action-btn secondary" onclick="resetGrammarModule()">Intentar de Nuevo</button>
+                <button class="action-btn primary" onclick="goToDashboard()">Continuar Aprendiendo</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Module 3: Time Race -->
+    <div id="time-race" class="module-container hidden">
+        <div class="module-intro-header">
+            <button class="back-btn" onclick="goToDashboard()">
+                <span class="back-arrow">←</span> Volver al Dashboard
+            </button>
+            <div class="module-intro-content">
+                <div class="intro-icon orange-gradient">⏱️</div>
+                <h1>Time Race</h1>
+                <p class="intro-description">
+                    ¡Pon a prueba tu velocidad y precisión! Responde preguntas contra el reloj y gana estrellas según tu velocidad. 
+                    La dificultad aumenta progresivamente para desafiarte al máximo.
+                </p>
+                <div class="intro-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">30</span>
+                        <span class="stat-label">Preguntas</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">⭐</span>
+                        <span class="stat-label">Sistema Estrellas</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">⚡</span>
+                        <span class="stat-label">Velocidad</span>
+                    </div>
+                </div>
+                <button class="start-race-btn" onclick="startTimeRace()">
+                    <span class="btn-icon">🚀</span>
+                    ¡Comenzar Carrera!
+                </button>
+            </div>
+        </div>
+
+        <div id="race-game" class="game-container hidden">
+            <div class="race-header">
+                <div class="race-stats">
+                    <div class="timer-display">
+                        <div class="timer-circle">
+                            <span id="race-timer">10</span>
+                        </div>
+                        <label>Segundos</label>
+                    </div>
+                    <div class="stars-display">
+                        <span class="star-icon">⭐</span>
+                        <span id="race-stars">0</span>
+                        <label>Estrellas</label>
+                    </div>
+                    <div class="question-display">
+                        <span id="race-question-num">1</span><small>/30</small>
+                        <label>Pregunta</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="race-question-section">
+                <div class="question-card">
+                    <h2 id="race-question">Pregunta aparecerá aquí</h2>
+                </div>
+                <div id="race-options" class="race-options-grid"></div>
+            </div>
+        </div>
+
+        <div id="race-results" class="results-container hidden">
+            <div class="results-header">
+                <div class="results-icon">🏆</div>
+                <h2>¡Carrera Completada!</h2>
+                <div class="race-final-stats">
+                    <div class="final-stat">
+                        <span class="stat-icon">⭐</span>
+                        <span id="final-stars" class="stat-number">0</span>
+                        <span class="stat-label">Estrellas Totales</span>
+                    </div>
+                    <div class="final-stat">
+                        <span class="stat-icon">⚡</span>
+                        <span id="avg-time" class="stat-number">0</span>
+                        <span class="stat-label">Tiempo Promedio</span>
+                    </div>
+                </div>
+            </div>
+            <div class="charts-container">
+                <div class="chart-card">
+                    <h3>Análisis de Tiempo de Respuesta</h3>
+                    <div class="chart-wrapper" style="position: relative; height: 300px;">
+                        <canvas id="raceTimeChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>Estrellas Ganadas</h3>
+                    <div class="chart-wrapper" style="position: relative; height: 300px;">
+                        <canvas id="raceStarsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="results-actions">
+                <button class="action-btn secondary" onclick="resetRaceModule()">Correr de Nuevo</button>
+                <button class="action-btn primary" onclick="goToDashboard()">Continuar Aprendiendo</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Module 4: Tell Me More -->
+    <div id="tell-me-more" class="module-container hidden">
+        <div class="module-intro-header">
+            <button class="back-btn" onclick="goToDashboard()">
+                <span class="back-arrow">←</span> Volver al Dashboard
+            </button>
+            <div class="module-intro-content">
+                <div class="intro-icon purple-gradient">📖</div>
+                <h1>Tell Me More</h1>
+                <p class="intro-description">
+                    Sumérgete en historias fascinantes que mejoran tu comprensión de lectura. 
+                    Cada historia incluye preguntas de comprensión para evaluar tu entendimiento del contexto y uso del inglés.
+                </p>
+                <div class="intro-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">10</span>
+                        <span class="stat-label">Historias</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">40</span>
+                        <span class="stat-label">Preguntas</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">📚</span>
+                        <span class="stat-label">Comprensión</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stories-selection">
+            <div class="story-card" onclick="startReading(0)">
+                <div class="story-image">🌸</div>
+                <div class="story-content">
+                    <h3>The Magic Garden</h3>
+                    <p>Una hermosa historia sobre Emma y su descubrimiento mágico</p>
+                    <div class="story-meta">
+                        <span class="story-length">📖 5 min read</span>
+                        <span class="story-level">🌟 Intermedio</span>
+                    </div>
+                </div>
+                <button class="story-btn">Leer Historia</button>
+            </div>
+            <!-- More stories would be added here -->
+        </div>
+
+        <div id="reading-game" class="game-container hidden">
+            <div class="reading-header">
+                <div class="reading-progress">
+                    <div class="progress-bar">
+                        <div id="reading-progress-fill" class="progress-fill purple-progress"></div>
+                    </div>
+                    <span class="progress-label">Progreso de Lectura</span>
+                </div>
+            </div>
+            
+            <div class="story-section">
+                <div class="story-content-card">
+                    <h2 id="story-title" class="story-title">Título de la Historia</h2>
+                    <div id="story-text" class="story-text">El texto de la historia aparecerá aquí...</div>
+                </div>
+            </div>
+            
+            <div id="comprehension-questions" class="questions-section">
+                <h3>Preguntas de Comprensión</h3>
+                <div id="questions-container"></div>
+                <button class="action-btn primary" id="submit-answers" onclick="submitReadingAnswers()">Enviar Respuestas</button>
+            </div>
+        </div>
+
+        <div id="reading-results" class="results-container hidden">
+            <div class="results-header">
+                <div class="results-icon">📚</div>
+                <h2>¡Historia Completada!</h2>
+                <div class="final-score">
+                    <span id="final-reading-score">0</span><small>/4</small>
+                </div>
+            </div>
+            <div class="charts-container">
+                <div class="chart-card">
+                    <h3>Velocidad de Lectura</h3>
+                    <div class="chart-wrapper" style="position: relative; height: 300px;">
+                        <canvas id="readingSpeedChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>Precisión de Comprensión</h3>
+                    <div class="chart-wrapper" style="position: relative; height: 300px;">
+                        <canvas id="readingAccuracyChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="results-actions">
+                <button class="action-btn secondary" onclick="resetReadingModule()">Leer Otra Historia</button>
+                <button class="action-btn primary" onclick="goToDashboard()">Continuar Aprendiendo</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Module 5: Baby Games -->
+    <div id="baby-games" class="module-container hidden">
+        <div class="module-intro-header">
+            <button class="back-btn" onclick="goToDashboard()">
+                <span class="back-arrow">←</span> Volver al Dashboard
+            </button>
+            <div class="module-intro-content">
+                <div class="intro-icon pink-gradient">🎮</div>
+                <h1>Baby Games 🎈</h1>
+                <p class="intro-description">
+                    ¡Juegos súper divertidos para los más pequeños! Aprende colores, números, letras y palabras básicas 
+                    a través de mini-juegos interactivos diseñados especialmente para niños.
+                </p>
+                <div class="intro-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">30</span>
+                        <span class="stat-label">Mini-Juegos</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">🌈</span>
+                        <span class="stat-label">Colores</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">😊</span>
+                        <span class="stat-label">Diversión</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="baby-games-grid">
+            <div class="baby-game-card" onclick="startBabyGame(0)">
+                <div class="baby-game-icon">🎨</div>
+                <h3>Match Colors</h3>
+                <p>¡Combina colores con objetos! 🌈</p>
+                <div class="baby-badge">Fácil</div>
+                <button class="baby-btn">¡Jugar! 🎉</button>
+            </div>
+            <div class="baby-game-card" onclick="startBabyGame(1)">
+                <div class="baby-game-icon">🔢</div>
+                <h3>Count Animals</h3>
+                <p>¡Aprende números del 1-10! 🐱</p>
+                <div class="baby-badge">Números</div>
+                <button class="baby-btn">¡Contar! 📱</button>
+            </div>
+            <div class="baby-game-card" onclick="startBabyGame(2)">
+                <div class="baby-game-icon">🔤</div>
+                <h3>Letter Sounds</h3>
+                <p>¡Sonidos del alfabeto! 📚</p>
+                <div class="baby-badge">Letras</div>
+                <button class="baby-btn">¡Aprender! ✨</button>
+            </div>
+        </div>
+
+        <div id="baby-game" class="game-container baby-game-container hidden">
+            <div class="baby-game-header">
+                <div class="baby-progress">
+                    <div class="baby-stars">
+                        <span id="baby-stars-count">0</span> ⭐
+                    </div>
+                    <h2 id="baby-game-title">Nombre del Juego</h2>
+                    <div class="baby-score">
+                        Puntos: <span id="baby-score">0</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="baby-game-content" class="baby-game-area">
+                <!-- Game content will be inserted here -->
+            </div>
+            
+            <button class="baby-next-btn hidden" id="baby-next" onclick="nextBabyQuestion()">
+                ¡Siguiente! 🎉
+            </button>
+        </div>
+
+        <div id="baby-results" class="results-container baby-results hidden">
+            <div class="results-header">
+                <div class="results-icon">🌟</div>
+                <h2>¡Muy Bien! 🎉</h2>
+                <div class="baby-final-score">
+                    <span id="final-baby-score">0</span> ⭐
+                </div>
+            </div>
+            <div class="charts-container">
+                <div class="chart-card">
+                    <h3>Tu Progreso de Aprendizaje</h3>
+                    <div class="chart-wrapper" style="position: relative; height: 300px;">
+                        <canvas id="babyProgressChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>Juegos Favoritos</h3>
+                    <div class="chart-wrapper" style="position: relative; height: 300px;">
+                        <canvas id="babyFavoriteChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="results-actions">
+                <button class="action-btn secondary baby-btn" onclick="resetBabyModule()">¡Jugar Otra Vez! 😊</button>
+                <button class="action-btn primary baby-btn" onclick="goToDashboard()">¡Más Juegos! 🎮</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Module 6: Link & Learn -->
+    <div id="link-learn" class="module-container hidden">
+        <div class="module-intro-header">
+            <button class="back-btn" onclick="goToDashboard()">
+                <span class="back-arrow">←</span> Volver al Dashboard
+            </button>
+            <div class="module-intro-content">
+                <div class="intro-icon teal-gradient">🔗</div>
+                <h1>Link & Learn</h1>
+                <p class="intro-description">
+                    Descubre los mejores recursos para aprender inglés. Una guía curada de 25 plataformas educativas 
+                    y 10 canales de YouTube recomendados para complementar tu aprendizaje.
+                </p>
+                <div class="intro-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">25</span>
+                        <span class="stat-label">Plataformas</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">10</span>
+                        <span class="stat-label">Canales YouTube</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">⭐</span>
+                        <span class="stat-label">Calificados</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="resources-navigation">
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="showTab('platforms')">
+                    <span class="tab-icon">🌐</span>
+                    Plataformas de Aprendizaje
+                </button>
+                <button class="tab-btn" onclick="showTab('youtube')">
+                    <span class="tab-icon">📺</span>
+                    Canales de YouTube
+                </button>
+            </div>
+        </div>
+
+        <div id="platforms-tab" class="tab-content">
+            <div class="resources-filters">
+                <div class="filter-item">
+                    <label>Filtrar por tipo:</label>
+                    <select id="platform-filter" onchange="filterPlatforms()">
+                        <option value="all">Todos</option>
+                        <option value="app">Aplicaciones</option>
+                        <option value="website">Sitios Web</option>
+                        <option value="platform">Plataformas</option>
+                    </select>
+                </div>
+                <div class="filter-item">
+                    <label>Calificación mínima:</label>
+                    <select id="rating-filter" onchange="filterPlatforms()">
+                        <option value="0">Todas</option>
+                        <option value="4">4+ estrellas</option>
+                        <option value="4.5">4.5+ estrellas</option>
+                    </select>
+                </div>
+            </div>
+            <div id="platforms-grid" class="resources-grid"></div>
+        </div>
+
+        <div id="youtube-tab" class="tab-content hidden">
+            <div class="resources-filters">
+                <div class="filter-item">
+                    <label>Ordenar por:</label>
+                    <select id="youtube-sort" onchange="sortYouTubeChannels()">
+                        <option value="rating">Calificación</option>
+                        <option value="subscribers">Suscriptores</option>
+                        <option value="name">Nombre</option>
+                    </select>
+                </div>
+            </div>
+            <div id="youtube-grid" class="resources-grid"></div>
+        </div>
+
+        <div class="resource-stats-section">
+            <button class="stats-btn" onclick="showResourceCharts()">
+                <span class="btn-icon">📊</span>
+                Ver Estadísticas de Recursos
+            </button>
+        </div>
+
+        <div id="resource-charts" class="results-container hidden">
+            <div class="results-header">
+                <div class="results-icon">📊</div>
+                <h2>Estadísticas de Recursos</h2>
+            </div>
+            <div class="charts-container">
+                <div class="chart-card">
+                    <h3>Recursos Más Populares</h3>
+                    <div class="chart-wrapper" style="position: relative; height: 300px;">
+                        <canvas id="resourcePopularityChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>Distribución de Calificaciones</h3>
+                    <div class="chart-wrapper" style="position: relative; height: 300px;">
+                        <canvas id="resourceRatingChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="results-actions">
+                <button class="action-btn primary" onclick="hideResourceCharts()">Volver a Recursos</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modern Footer -->
+    <footer class="modern-footer">
+        <div class="footer-content">
+            <div class="footer-quote">
+                <div class="quote-icon">✨</div>
+                <p>"Para ver claro, basta con cambiar la dirección de la mirada"</p>
+                <span class="quote-author">- El Principito</span>
+            </div>
+            <div class="footer-brand">
+                <h3>QuantumAI — Edumural</h3>
+                <div class="footer-credits">
+                    <p><strong>François Tromp</strong></p>
+                    <div class="contact-links">
+                        <a href="mailto:Sasus1810@hotmail.com">Sasus1810@hotmail.com</a>
+                        <span class="separator">|</span>
+                        <a href="mailto:Francoisltromp@liceofosan.edu.co">Francoisltromp@liceofosan.edu.co</a>
+                    </div>
+                    <p class="year">© 2025</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-wave">
+            <svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,60 C300,120 900,0 1200,60 L1200,120 L0,120 Z" fill="var(--color-primary)"></path>
+            </svg>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
